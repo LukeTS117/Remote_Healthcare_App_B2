@@ -6,7 +6,7 @@ namespace Remote_Healthcare_App_B2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Test dev");
         }
     }
 }
