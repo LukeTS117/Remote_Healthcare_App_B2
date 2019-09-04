@@ -39,8 +39,6 @@ namespace ErgoConnect
 
             //---Heart rate Bluetooth Low Energy code---
             ConnectToHeartRateSensor(heartRateSensorBle, errorCode);
-
-            Console.Read();
         }
 
         private async static void ConnectToErgoMeter(BLE ergoMeterBle, System.String ergometerSerialLastFiveNumbers, System.Int32 errorCode)
