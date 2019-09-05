@@ -59,14 +59,10 @@ namespace ErgoConnect
 
         }
 
-        private static void writeToFile(System.String path, System.String input) 
+        private static void writeToFile(System.String path, System.String input)
         {
-            
-            System.IO.File.AppendAllText(path, input+"\n"); 
-            
-           
+            System.IO.File.AppendAllText(path, input + "\n");
         }
-
         private async static void ConnectToHeartRateSensor(BLE heartRateSensorBle, System.Int32 errorCode)
         {
 
@@ -105,12 +101,12 @@ namespace ErgoConnect
             System.String serviceName = e.ServiceName;
             System.String data = BitConverter.ToString(e.Data).Replace("-", " ");
             System.String UTF8 = Encoding.UTF8.GetString(e.Data);
-            Console.WriteLine($"{serviceName} {data} {UTF8}");
+            Console.WriteLine($"ID:{ergometerSerialLastFiveNumbers} {serviceName} {data}");
 
             System.String path = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}/RemoteHealthcare/";
             if (!System.IO.Directory.Exists(path))
                 System.IO.Directory.CreateDirectory(path);
-            writeToFile($"{path}BLEdata.txt", data);
+            writeToFile($"{path}BLEdata.txt",  $"{ergometerSerialLastFiveNumbers} {data}");
         }
     }
 }
